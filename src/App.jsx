@@ -7,6 +7,7 @@ import Home from './pages/home/Home';
 
 //components
 import Navbar from './components/navbar/Navbar';
+import Footer from './components/footer/Footer';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
             <Route path='/' element={<Home />}/>
           </Routes>
         </div>
+        <Footer />
       </BrowserRouter>
     </div>
   )
