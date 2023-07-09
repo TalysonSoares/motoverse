@@ -1,0 +1,21 @@
+body {
+    background-color: #F6FCFF;
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a, nav button {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    color: #000;
+    transition: .4s;
+    font-size: 1em;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a:hover, nav button:hover {
+    color: #bbb
+}
