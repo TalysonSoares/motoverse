@@ -5,6 +5,15 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+input::placeholder {
+    font-family: 'Montserrat', sans-serif;
+    color: #AAA;
+}
+
+input:focus {
+    outline: none;
+}
+
 a, nav button {
     text-decoration: none;
     background-color: transparent;
@@ -18,4 +27,58 @@ a, nav button {
 
 a:hover, nav button:hover {
     color: #bbb
+}
+ /* form styles */
+form {
+    max-width: 40%;
+    margin: 0 auto;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1px;
+}
+
+label span {
+    margin-bottom: .3em;
+    font-weight: bold;
+    text-align: left;
+}
+
+input {
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #CCC;
+    padding: .8em 0;
+    background-color: transparent;
+}
+
+.btn {
+    background-color: #1a8918;
+    color: #FFF;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 120px;
+    font-weight: bold;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+}
+
+.btn:hover {
+    background-color: #0F730c;
+}
+
+button[disabled] {
+    background-color: #AAA;
+}
+
+.container .error {
+    color: #721c24;
+    background-color: #F8D7DA;
+    border: 1px solid #F5C6CB;
+    padding: 5px;
+    border-radius: 5px;
 }

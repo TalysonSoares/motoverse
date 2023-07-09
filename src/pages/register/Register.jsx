@@ -1,8 +1,11 @@
+import styles from "./Register.module.css"
+
 const Register = () => {
   return (
     <div>
         <h1>Cadrastre-se para finalizar compra</h1>
-        <form>
+        <p>Crie sua conta</p>
+        <form className={styles.register}>
             <label>
                 <span>Nome:</span>
                 <input type="text" name="displayName" required placeholder="Digite seu nome" />
