@@ -23,9 +23,10 @@ import Dashboard from './pages/dashboard/Dashboard';
 
 function App() {
 
+  const [isAdmin, setIsAdmin] = useState(false);
   const [user, setUser] = useState(undefined);
   const {auth} = useAuthentication();
-  const isAdmin = user.uid === "r1BWzRIjVJX0NMyLtEMpIcufXq13";
+  
 
   const loadingUser = user === undefined;
 
@@ -33,7 +34,11 @@ function App() {
 
     onAuthStateChanged(auth, (user) => {
       setUser(user);
-    })
+    });
+
+    if(user && user.uid === "r1BWzRIjVJX0NMyLtEMpIcufXq13"){
+      setIsAdmin(true);
+    }
   }, [auth])
 
   if (loadingUser) {
