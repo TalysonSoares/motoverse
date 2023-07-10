@@ -37,7 +37,10 @@ export const useAuthentication = () => {
           await updateProfile(user, {
             displayName: data.displayName
           })
+        
+          setLoading(false);
 
+          console.log(user.uid === 123)
           return user
 
         } catch (error) {
@@ -54,11 +57,9 @@ export const useAuthentication = () => {
                     systemErrorMessage = "Ocorreu um erro, por favor tente mais tarde."
                 }
 
-                setError(systemErrorMessage)
-
+                setLoading(false);
+                setError(systemErrorMessage);
         }
-
-        setLoading(false);
     };
 
     useEffect(() => {

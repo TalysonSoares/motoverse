@@ -75,6 +75,10 @@ button[disabled] {
     background-color: #AAA;
 }
 
+button[disabled]:hover {
+    background-color: #AAA;
+}
+
 .container .error {
     color: #721c24;
     background-color: #F8D7DA;
