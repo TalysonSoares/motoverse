@@ -27,6 +27,16 @@ const Navbar = () => {
             </li>
           </>
         )}
+        {user && (
+          <>
+            <li>
+              <NavLink to="/dashboard" className={({ isActive }) => (isActive ? styles.active : "")}>Dashboard</NavLink>
+            </li>
+            <li>
+              <NavLink to="/products/create" className={({ isActive }) => (isActive ? styles.active : "")}>Adicionar Moto</NavLink>
+            </li>
+          </>
+        )}
     </ul>
   </nav>
 }

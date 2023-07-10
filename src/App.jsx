@@ -10,14 +10,16 @@ import { useAuthentication } from './hooks/useAuthentication';
 // context
 import { AuthProvider } from "./context/AuthContext"
 
-//pages
-import Home from './pages/home/Home';
-
 //components
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
+
+//pages
+import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
+import CreateProduct from './pages/createProduct/CreateProduct';
+import Dashboard from './pages/dashboard/Dashboard';
 
 function App() {
 
@@ -47,6 +49,8 @@ function App() {
               <Route path='/' element={<Home />}/>
               <Route path='/login' element={<Login />} />
               <Route path='/register' element={<Register />} />
+              <Route path='/products/create' element={<CreateProduct />} />
+              <Route path='/dashboard' element={<Dashboard />} />
             </Routes>
           </div>
           <Footer />
