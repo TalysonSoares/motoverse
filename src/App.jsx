@@ -1,6 +1,6 @@
 import './App.css';
 
-import { BrowserRouter, Routes, Route,  } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
 
 //hooks
@@ -25,6 +25,7 @@ function App() {
 
   const [user, setUser] = useState(undefined);
   const {auth} = useAuthentication();
+  const isAdmin = user.uid === "r1BWzRIjVJX0NMyLtEMpIcufXq13";
 
   const loadingUser = user === undefined;
 
@@ -47,10 +48,10 @@ function App() {
           <div className="container">
             <Routes>
               <Route path='/' element={<Home />}/>
-              <Route path='/login' element={<Login />} />
-              <Route path='/register' element={<Register />} />
-              <Route path='/products/create' element={<CreateProduct />} />
-              <Route path='/dashboard' element={<Dashboard />} />
+              <Route path='/login' element={!user ? <Login /> : <Navigate to="/"/>} />
+              <Route path='/register' element={!user ? <Register /> : <Navigate to="/" />} />
+              <Route path='/products/create' element={isAdmin ? <CreateProduct /> : <Navigate to="/" />} />
+              <Route path='/dashboard' element={isAdmin ? <Dashboard /> : <Navigate to="/" />} />
             </Routes>
           </div>
           <Footer />
