@@ -5,12 +5,14 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
     font-family: 'Montserrat', sans-serif;
     color: #AAA;
 }
 
-input:focus {
+input:focus,
+textarea {
     outline: none;
 }
 
@@ -46,7 +48,7 @@ label span {
     text-align: left;
 }
 
-input {
+input, textarea {
     box-sizing: border-box;
     border: none;
     border-bottom: 1px solid #CCC;

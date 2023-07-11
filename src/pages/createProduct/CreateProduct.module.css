@@ -1,0 +1,11 @@
+.createProduct {
+    text-align: center;
+}
+
+.createProduct h2 {
+    font-size: 2.2em;
+}
+
+.createProduct p {
+    color: #AAA;
+}
