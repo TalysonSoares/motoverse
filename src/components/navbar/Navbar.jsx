@@ -1,14 +1,25 @@
 import styles from "./Navbar.module.css"
 
 import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import { useAuthentication } from "../../hooks/useAuthentication";
 
 import { useAuthValue } from "../../context/AuthContext";
 
 const Navbar = () => {
+  const [isAdmin, setIsAdmin] = useState(false)
   const { user } = useAuthValue();
   const {logout} = useAuthentication();
+
+  console.log(user)
+  useEffect(() => {
+    if (user && user.uid === "r1BWzRIjVJX0NMyLtEMpIcufXq13") {
+      setIsAdmin(true);
+    } else {
+      setIsAdmin(false);
+    }
+  }, [user]);
 
   return <nav className={styles.navbar}>
     <NavLink to="/" className={styles.brand}>
@@ -28,7 +39,7 @@ const Navbar = () => {
             </li>
           </>
         )}
-        {user && (
+        {isAdmin && (
           <>
             <li>
               <NavLink to="/dashboard" className={({ isActive }) => (isActive ? styles.active : "")}>Dashboard</NavLink>

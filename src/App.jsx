@@ -36,10 +36,15 @@ function App() {
       setUser(user);
     });
 
-    if(user && user.uid === "r1BWzRIjVJX0NMyLtEMpIcufXq13"){
-      setIsAdmin(true);
-    }
   }, [auth])
+
+  useEffect(() => {
+    if (user && user.uid === "r1BWzRIjVJX0NMyLtEMpIcufXq13") {
+      setIsAdmin(true);
+    } else {
+      setIsAdmin(false);
+    }
+  }, [user]);
 
   if (loadingUser) {
     return <p>Carregando...</p>
