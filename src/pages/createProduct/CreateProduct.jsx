@@ -14,10 +14,23 @@ const CreateProduct = () => {
   const [formError, setFormError] = useState("");
 
   const {insertDocument, response} = useInsertDocument("products");
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormError("");
+
+    try {
+      new URL(image);
+    } catch (error) {
+      setFormError("A imagem precisa ser uma URL.")
+    }
+
+    if(!title || !image || !body || !brand || !price) {
+      setFormError("Por favor, preencha todos os campos!x'")
+    }
+
+    if(formError) return;
 
     insertDocument({
       title,
@@ -27,6 +40,7 @@ const CreateProduct = () => {
       price
     })
 
+    navigate("/")
   }
 
   return (
@@ -57,6 +71,7 @@ const CreateProduct = () => {
         {!response.loading && <button className="btn">Adicionar</button>}
         {response.loading && <button className="btn" disabled>Aguarde...</button>}
         {response.error && <p className="error">{response.error}</p>}
+        {formError && <p className="error">{formError}</p>}
       </form>
     </div>
   )

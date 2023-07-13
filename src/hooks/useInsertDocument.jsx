@@ -27,7 +27,6 @@ export const useInsertDocument = (docCollection) => {
 
     // memory leak 
     const [cancelled, setCancelled] = useState(false);
-    console.log(cancelled)
 
     const checkCancelBeforeDispatch = (action) => {
         if(!cancelled) {
