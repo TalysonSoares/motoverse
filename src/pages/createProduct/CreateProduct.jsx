@@ -3,17 +3,30 @@ import styles from "./CreateProduct.module.css"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthValue } from "../../context/AuthContext";
+import { useInsertDocument } from "../../hooks/useInsertDocument";
 
 const CreateProduct = () => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [body, setBody] = useState("");
   const [brand, setBrand] = useState("");
-  const [price, setPrice] = useState(null);
+  const [price, setPrice] = useState('');
   const [formError, setFormError] = useState("");
+
+  const {insertDocument, response} = useInsertDocument("products");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormError("");
+
+    insertDocument({
+      title,
+      image,
+      body,
+      brand,
+      price
+    })
+
   }
 
   return (
@@ -41,10 +54,9 @@ const CreateProduct = () => {
           <span>Descrição:</span>
           <textarea name="body" required placeholder="Insira o descrição do produto" onChange={(e) => setBody(e.target.value)} value={body}></textarea>
         </label>
-        <button className="btn">Adicionar</button>
-        {/* {!loading && <button className="btn">Adicionar</button>}
-        {loading && <button className="error">Aguarde...</button>}
-        {error && <p className="error">{error}</p>} */}
+        {!response.loading && <button className="btn">Adicionar</button>}
+        {response.loading && <button className="btn" disabled>Aguarde...</button>}
+        {response.error && <p className="error">{response.error}</p>}
       </form>
     </div>
   )
