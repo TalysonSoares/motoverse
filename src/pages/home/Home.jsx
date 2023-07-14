@@ -6,7 +6,7 @@ const Home = () => {
   const {documents: products, loading} = useFetchDocuments("products");
   return (
     <div className={styles.home}>
-      <h1>Home</h1>
+      <h1></h1>
       <div className={styles.products}>
         {products && products.map((product) => (
           <>

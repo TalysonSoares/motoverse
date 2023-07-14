@@ -32,6 +32,7 @@
 .productRow {
     align-items: center;
     border-bottom: 1px solid #EEE;
+    flex-wrap: wrap;
 }
 
 .productRow p {
@@ -42,6 +43,7 @@
 .productRow a {
     margin: 0 5px;
     height: 30px;
-    width: 100px;
+    width: auto; 
     font-size: 0.7em;
+
 }

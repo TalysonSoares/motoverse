@@ -1,0 +1,32 @@
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1rem;
+}
+
+.details .imageDetail {
+    width: 45vw;
+}
+
+.details img {
+    width: 100%;
+}
+
+.details .information {
+    width: 45vw;
+}
+
+.description {
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .details {
+      flex-direction: column;
+    }
+  
+    .details .imageDetail,
+    .details .information {
+      width: 100%; /* Define a largura das divs para ocupar 100% do espaço */
+    }
+  }
