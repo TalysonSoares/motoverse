@@ -3,8 +3,8 @@ import styles from "./EditProduct.module.css"
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuthValue } from "../../context/AuthContext";
-import { useInsertDocument } from "../../hooks/useInsertDocument";
 import { useFetchDocument } from "../../hooks/useFetchDocument";
+import { useUpdateDocument } from "../../hooks/useUpdateDocument";
 
 const EditProduct = () => {
   const {id} = useParams();
@@ -33,7 +33,7 @@ const EditProduct = () => {
     
   }, [product])
 
-  const {insertDocument, response} = useInsertDocument("products");
+  const {updateDocument, response} = useUpdateDocument  ("products");
   const navigate = useNavigate()
 
   const handleSubmit = (e) => {
@@ -52,16 +52,18 @@ const EditProduct = () => {
 
     if(formError) return;
 
-    insertDocument({
-      title,
-      image,
-      body,
-      brand,
-      price,
-      displacement
-    })
+    const data = {
+        title,
+        image,
+        body,
+        brand,
+        price,
+        displacement
+      }
 
-    navigate("/")
+    updateDocument(id, data)
+
+    navigate("/dashboard")
   }
 
   return (
