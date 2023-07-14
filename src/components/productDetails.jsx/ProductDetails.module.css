@@ -1,0 +1,64 @@
+.card {
+    border-radius: 20px;
+    background: #e0e0e0;
+    box-shadow:  5px 5px 7px #a4a4a4,
+                 -5px -5px 7px #ffffff;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s;
+}
+
+.card:hover {
+    border: 1px solid black;
+    transform: scale(1.05);
+}
+
+.card:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+}
+
+.image {
+    align-self: center;
+    width: 13rem;
+    height: 13rem;
+    margin-top: 1em;
+    border-radius: 20px;
+}
+
+.card p {
+    font-weight: bold;
+}
+
+.information {
+    margin: 0 1em;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.buy {
+    background-color: rgb(6, 2, 54);
+    color: rgb(255, 255, 255);
+    border-radius: 1em;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 1em 2em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid black;
+    box-shadow: 0 0 0 0 black;
+    margin: 8px;
+    text-align: center;
+  }
+  
+  .buy:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 black;
+  };
+  
+  .buy:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 black;
+  };
+   
+
