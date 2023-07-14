@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     margin: 1em;
+    padding: 0 3.125rem;
 }
 
 .home .card {
@@ -18,5 +19,5 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1em;
+    gap: 3em;
 }

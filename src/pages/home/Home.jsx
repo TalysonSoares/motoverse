@@ -6,10 +6,26 @@ const Home = () => {
   const {documents: products, loading} = useFetchDocuments("products");
   return (
     <div className={styles.home}>
-      
       <h1>Home</h1>
       <div className={styles.products}>
-        {products && products.map((product) => <ProductDetails key={product.id} product={product}/>)}
+        {products && products.map((product) => (
+          <>
+          <ProductDetails key={product.id} product={product}/>
+          <ProductDetails key={product.id} product={product}/>
+          <ProductDetails key={product.id} product={product}/>
+          <ProductDetails key={product.id} product={product}/>
+          <ProductDetails key={product.id} product={product}/>
+          <ProductDetails key={product.id} product={product}/>
+          <ProductDetails key={product.id} product={product}/>
+          <ProductDetails key={product.id} product={product}/>
+          <ProductDetails key={product.id} product={product}/>
+          <ProductDetails key={product.id} product={product}/>
+          <ProductDetails key={product.id} product={product}/>
+          <ProductDetails key={product.id} product={product}/>
+          <ProductDetails key={product.id} product={product}/>
+          </>
+          
+        ))}
       </div>
     </div>
   )

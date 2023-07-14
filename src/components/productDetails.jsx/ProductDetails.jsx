@@ -9,6 +9,8 @@ const ProductDetails = ({ product }) => {
                 <img className={styles.image} src={product.image} alt={product.title} />
                 <div className={styles.information}>
                     <p>{product.title}</p>
+                    <span className={styles.brand}>{product.brand}</span>
+                    <span>{product.displacement}cc</span>
                     <span>R$ {product.price}</span>
                     <Link to={`/product/${product.id}`} className={styles.buy}><span>Comprar</span></Link>
                 </div>

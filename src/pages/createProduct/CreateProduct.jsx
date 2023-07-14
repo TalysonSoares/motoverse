@@ -11,6 +11,7 @@ const CreateProduct = () => {
   const [body, setBody] = useState("");
   const [brand, setBrand] = useState("");
   const [price, setPrice] = useState('');
+  const [displacement, setDisplacement] = useState("");
   const [formError, setFormError] = useState("");
 
   const {insertDocument, response} = useInsertDocument("products");
@@ -26,7 +27,7 @@ const CreateProduct = () => {
       setFormError("A imagem precisa ser uma URL.")
     }
 
-    if(!title || !image || !body || !brand || !price) {
+    if(!title || !image || !body || !brand || !price || !displacement) {
       setFormError("Por favor, preencha todos os campos!x'")
     }
 
@@ -37,7 +38,8 @@ const CreateProduct = () => {
       image,
       body,
       brand,
-      price
+      price,
+      displacement
     })
 
     navigate("/")
@@ -55,6 +57,10 @@ const CreateProduct = () => {
         <label>
           <span>Marca:</span>
           <input type="text" name="brand" required  placeholder="Insira a marca da moto" onChange={(e) => setBrand(e.target.value)} value={brand}/>
+        </label>
+        <label>
+          <span>Cilindrada:</span>
+          <input type="text" name="displacement" required placeholder="Informe a cilindrada da moto" onChange={(e) => setDisplacement(e.target.value)} value={displacement}/>
         </label>
         <label>
           <span>URL da imagem:</span>

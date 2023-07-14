@@ -21,7 +21,7 @@ const Navbar = () => {
   }, [user]);
 
   return <nav className={styles.navbar}>
-    <NavLink to="/" className={styles.brand}>
+    <NavLink to="/" className={styles.brandLogo}>
         Moto<span>verse</span>
     </NavLink>
     <ul className={styles.links_list}>
