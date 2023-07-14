@@ -16,16 +16,16 @@ const Dashboard = () => {
   }
 
   return (
-    <div>
+    <div className={styles.dashboard}>
         <h2>Dashboard</h2>
         <p>Gerencie seus produtos</p>
         <>
-        <div>
+        <div className={styles.productHeader}>
           <span>Título</span>
           <span>Ações</span>
         </div>
 
-        {products && products.map((product) => <div key={product.id}>
+        {products && products.map((product) => <div key={product.id} className={styles.productRow}>
            <p>{product.title}</p>
            <div>
               <Link to={`/product/${product.id}`} className="btn btn-outline">Ver</Link>
