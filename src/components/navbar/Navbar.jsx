@@ -12,7 +12,6 @@ const Navbar = () => {
   const { user } = useAuthValue();
   const {logout} = useAuthentication();
 
-  console.log(user)
   useEffect(() => {
     if (user && user.uid === "r1BWzRIjVJX0NMyLtEMpIcufXq13") {
       setIsAdmin(true);

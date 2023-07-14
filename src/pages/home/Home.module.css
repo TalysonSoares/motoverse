@@ -1,0 +1,22 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+}
+
+.home .card {
+    width: 15rem;
+}
+
+.home .image {
+    border: 1px solid red;
+    width: 15rem;
+    height: 15rem;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}

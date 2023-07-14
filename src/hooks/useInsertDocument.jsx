@@ -1,6 +1,6 @@
 import {useState, useEffect, useReducer } from "react";
 import {db} from "../firebase/config";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, Timestamp } from "firebase/firestore";
 
 const initialState = {
     loading: null,
@@ -41,7 +41,7 @@ export const useInsertDocument = (docCollection) => {
 
         try {
             
-            const newDocument = {...document}
+            const newDocument = {...document, createdAt: Timestamp.now()}
             
             const insertedDocument = await addDoc(
                 collection(db, docCollection), newDocument
