@@ -29,3 +29,17 @@
     background-color: #000;
     color: #FFF;
 }
+
+@media screen and (max-width: 600px) {
+    .navbar {
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: .5em 1em;
+    }
+    
+    .links_list li button {
+        margin-right: 9px;
+        margin-top: -5px;
+      }
+  }
+  

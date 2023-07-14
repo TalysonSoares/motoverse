@@ -34,7 +34,7 @@ const Dashboard = () => {
 
         {products && products.map((product) => <div key={product.id} className={styles.productRow}>
            <p>{product.title}</p>
-           <div>
+           <div className={styles.buttons}>
               <Link to={`/product/${product.id}`} className="btn btn-outline">Ver</Link>
               <Link to={`/product/edit/${product.id}`} className="btn btn-outline">Editar</Link>
               <button onClick={() => handleDelete(product.id)} className="btn btn-outline btn-danger">Excluir</button>
