@@ -3,12 +3,19 @@ import styles from "./Dashboard.module.css"
 import { Link } from "react-router-dom";
 
 import { useFetchDocuments } from "../../hooks/useFetchDocuments";
+import { useDeleteDocument } from "../../hooks/useDeleteDocument";
 
 const Dashboard = () => {
   const {documents: products, loading} = useFetchDocuments("products");
 
-  const deleteDocument = (id) => {
+  const {deleteDocument} = useDeleteDocument("products")
 
+  const handleDelete = (productId) => {
+    const confirmed = window.confirm("Tem certeza que deseja excluir este produto?")
+
+    if(confirmed) {
+      deleteDocument(productId)
+    }
   }
 
   if (loading) {
@@ -30,7 +37,7 @@ const Dashboard = () => {
            <div>
               <Link to={`/product/${product.id}`} className="btn btn-outline">Ver</Link>
               <Link to={`product/edit/${product.id}`} className="btn btn-outline">Editar</Link>
-              <button onClick={() => deleteDocument(product.id)} className="btn btn-outline btn-danger">Excluir</button>
+              <button onClick={() => handleDelete(product.id)} className="btn btn-outline btn-danger">Excluir</button>
            </div>
         </div>)}
         </>
