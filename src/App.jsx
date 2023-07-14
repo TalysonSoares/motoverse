@@ -22,6 +22,7 @@ import CreateProduct from './pages/createProduct/CreateProduct';
 import Dashboard from './pages/dashboard/Dashboard';
 import Product from './pages/product/Product';
 import EditProduct from './pages/editProduct/EditProduct';
+import Checkout from './pages/checkout/Checkout';
 
 function App() {
 
@@ -65,6 +66,7 @@ function App() {
               <Route path='/products/create' element={isAdmin ? <CreateProduct /> : <Navigate to="/" />} />
               <Route path='/product/edit/:id' element={isAdmin ? <EditProduct /> : <Navigate to="/" />} />
               <Route path='/product/:id' element={<Product />}/>
+              <Route path='/product/:id/checkout/' element={<Checkout />}/>
               <Route path='/dashboard' element={isAdmin ? <Dashboard /> : <Navigate to="/" />} />
             </Routes>
           </div>
