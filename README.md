@@ -2,6 +2,9 @@
 
 Este é o README para o projeto Motoverse. Aqui você encontrará as informações necessárias para configurar, instalar e executar o projeto em seu computador.
 
+## Acesso ao Projeto Online
+Se preferir, você pode acessar o projeto online sem precisar baixá-lo. Basta clicar no seguinte link: [Motoverse Online](https://motoverse-dun.vercel.app/).
+
 ## Pré-requisitos
 Antes de começar, verifique se você tem o Node.js instalado em seu computador. Caso contrário, você pode baixá-lo e instalá-lo em [nodejs.org](https://nodejs.org/).
 
