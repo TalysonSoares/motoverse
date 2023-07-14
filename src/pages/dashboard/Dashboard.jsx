@@ -11,7 +11,7 @@ const Dashboard = () => {
   const {deleteDocument} = useDeleteDocument("products")
 
   const handleDelete = (productId) => {
-    const confirmed = window.confirm("Tem certeza que deseja excluir este produto?")
+    const confirmed = window.confirm("Tem certeza que deseja excluir esta moto?")
 
     if(confirmed) {
       deleteDocument(productId)
@@ -25,7 +25,7 @@ const Dashboard = () => {
   return (
     <div className={styles.dashboard}>
         <h2>Dashboard</h2>
-        <p>Gerencie seus produtos</p>
+        <p>Gerencie suas motos</p>
         <>
         <div className={styles.productHeader}>
           <span>Título</span>
@@ -36,7 +36,7 @@ const Dashboard = () => {
            <p>{product.title}</p>
            <div>
               <Link to={`/product/${product.id}`} className="btn btn-outline">Ver</Link>
-              <Link to={`product/edit/${product.id}`} className="btn btn-outline">Editar</Link>
+              <Link to={`/product/edit/${product.id}`} className="btn btn-outline">Editar</Link>
               <button onClick={() => handleDelete(product.id)} className="btn btn-outline btn-danger">Excluir</button>
            </div>
         </div>)}

@@ -21,6 +21,7 @@ import Register from './pages/register/Register';
 import CreateProduct from './pages/createProduct/CreateProduct';
 import Dashboard from './pages/dashboard/Dashboard';
 import Product from './pages/product/Product';
+import EditProduct from './pages/editProduct/EditProduct';
 
 function App() {
 
@@ -62,6 +63,7 @@ function App() {
               <Route path='/login' element={!user ? <Login /> : <Navigate to="/"/>} />
               <Route path='/register' element={!user ? <Register /> : <Navigate to="/" />} />
               <Route path='/products/create' element={isAdmin ? <CreateProduct /> : <Navigate to="/" />} />
+              <Route path='/product/edit/:id' element={isAdmin ? <EditProduct /> : <Navigate to="/" />} />
               <Route path='/product/:id' element={<Product />}/>
               <Route path='/dashboard' element={isAdmin ? <Dashboard /> : <Navigate to="/" />} />
             </Routes>

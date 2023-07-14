@@ -11,18 +11,6 @@ const Home = () => {
         {products && products.map((product) => (
           <>
           <ProductDetails key={product.id} product={product}/>
-          <ProductDetails key={product.id} product={product}/>
-          <ProductDetails key={product.id} product={product}/>
-          <ProductDetails key={product.id} product={product}/>
-          <ProductDetails key={product.id} product={product}/>
-          <ProductDetails key={product.id} product={product}/>
-          <ProductDetails key={product.id} product={product}/>
-          <ProductDetails key={product.id} product={product}/>
-          <ProductDetails key={product.id} product={product}/>
-          <ProductDetails key={product.id} product={product}/>
-          <ProductDetails key={product.id} product={product}/>
-          <ProductDetails key={product.id} product={product}/>
-          <ProductDetails key={product.id} product={product}/>
           </>
           
         ))}
