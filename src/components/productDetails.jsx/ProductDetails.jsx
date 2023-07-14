@@ -10,7 +10,7 @@ const ProductDetails = ({ product }) => {
                 <div className={styles.information}>
                     <p>{product.title}</p>
                     <span>R$ {product.price}</span>
-                <Link to={`/prooducts/${product.id}`} className={styles.buy}><span>Comprar</span></Link>
+                    <Link to={`/product/${product.id}`} className={styles.buy}><span>Comprar</span></Link>
                 </div>
             </div>
         </>

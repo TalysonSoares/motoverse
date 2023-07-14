@@ -10,14 +10,6 @@ const Home = () => {
       <h1>Home</h1>
       <div className={styles.products}>
         {products && products.map((product) => <ProductDetails key={product.id} product={product}/>)}
-        <div className={styles.card}>
-          <div className={styles.image}></div>
-          <h1>Harley-Davidson</h1>
-        </div>
-        <div className={styles.card}>
-          <div className={styles.image}></div>
-          <h1>Harley-Davidson</h1>
-        </div>
       </div>
     </div>
   )
